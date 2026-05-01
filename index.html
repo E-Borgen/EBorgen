@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Borgen — Borgen's Internet Storefront</title>
+<meta name="description" content="A community trade board for FarmRPG. Stalls, trades, freebies, and Borgen's questionable business decisions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..900,30..100&family=Caveat:wght@400..700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=0.0.1">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar" id="sidebar">
+    <!-- Populated by js/nav.js -->
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <main class="main">
+
+    <!-- TOP BAR -->
+    <div class="topbar" id="topbar">
+      <!-- Populated by js/topbar.js -->
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <!-- Populated by js/home.js -->
+    </section>
+
+    <!-- CHAT GENERATOR -->
+    <div class="section-head">
+      <h2 class="section-title">Chat Text Generator</h2>
+      <span class="section-tag">no account needed!</span>
+      <span class="section-spacer"></span>
+    </div>
+    <section class="gen-card" id="chatGen">
+      <!-- Populated by js/home.js (generator UI) -->
+    </section>
+
+    <!-- ACTIVE LISTINGS -->
+    <div class="section-head" id="listingsHead" hidden>
+      <h2 class="section-title">Your Active Listings</h2>
+      <span class="section-tag" id="listingsCount"></span>
+      <span class="section-spacer"></span>
+    </div>
+    <section class="listings-grid" id="myListings"></section>
+
+    <!-- LINK PROMPT (unlinked users) -->
+    <section class="link-prompt" id="linkPrompt" hidden>
+      <!-- Populated by js/home.js when user is logged-in but unverified -->
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="foot">
+      <strong>E-Borgen is an independent fan project.</strong> Not affiliated with or endorsed by Magic &amp; Wires LLC or FarmRPG.<br>
+      For trade issues — talk to us. For game issues — talk to FarmRPG. Please don't bug FarmRPG mods about us. 💚
+      <div class="foot-row">
+        <a href="#" id="discordLink">Discord</a>
+        <a href="https://farmrpg-pricecheck.free.nf" target="_blank" rel="noopener">Check the Market 📊</a>
+        <a href="https://buddy.farm" target="_blank" rel="noopener">Buddy.farm</a>
+        <a href="pages/credits.html">Credits</a>
+        <a href="#" id="reportLink">Report a problem</a>
+      </div>
+    </footer>
+
+  </main>
+</div>
+
+<!-- Floating Post button -->
+<button class="fab" id="postBtn" title="Post a new listing">$</button>
+
+<!-- Modal mount point -->
+<div id="modalMount"></div>
+
+<!-- Toast mount point -->
+<div id="toastMount"></div>
+
+<!-- ============ JS ============ -->
+<script type="module" src="js/supabase-client.js?v=0.0.1"></script>
+<script type="module" src="js/auth.js?v=0.0.1"></script>
+<script type="module" src="js/presence.js?v=0.0.1"></script>
+<script type="module" src="js/nav.js?v=0.0.1"></script>
+<script type="module" src="js/topbar.js?v=0.0.1"></script>
+<script type="module" src="js/home.js?v=0.0.1"></script>
+
+</body>
+</html>
